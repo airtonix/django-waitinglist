@@ -3,7 +3,7 @@ from django.views.generic import TemplateView
 
 
 urlpatterns = patterns("",
-    url(r"^/$", "waitinglist.views.list_signup", name="waitinglist_list_signup"),
+    url(r"^$", "waitinglist.views.list_signup", name="waitinglist_list_signup"),
     url(r"^ajax/$", "waitinglist.views.ajax_list_signup", name="waitinglist_ajax_list_signup"),
     url(r"^survey/thanks/$", TemplateView.as_view(template_name="waitinglist/thanks.html"), name="waitinglist_thanks"),
     url(r"^survey/(?P<code>.*)/$", "waitinglist.views.survey", name="waitinglist_survey"),
