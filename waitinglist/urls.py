@@ -1,13 +1,13 @@
-from django.conf.urls.defaults import patterns, url
+from django.conf.urls import patterns, url
 from django.views.generic import TemplateView
 
 
 urlpatterns = patterns("",
-    url(r"^$", "waitinglist.views.list_signup", name="waitinglist_list_signup"),
-    url(r"^ajax/$", "waitinglist.views.ajax_list_signup", name="waitinglist_ajax_list_signup"),
+    url(r"^list_signup/$", "waitinglist.views.list_signup", name="waitinglist_list_signup"),
+    url(r"^ajax_list_signup/$", "waitinglist.views.ajax_list_signup", name="waitinglist_ajax_list_signup"),
     url(r"^survey/thanks/$", TemplateView.as_view(template_name="waitinglist/thanks.html"), name="waitinglist_thanks"),
     url(r"^survey/(?P<code>.*)/$", "waitinglist.views.survey", name="waitinglist_survey"),
-    url(r"^thanks/$", TemplateView.as_view(template_name="waitinglist/success.html"), name="waitinglist_success"),
+    url(r"^success/$", TemplateView.as_view(template_name="waitinglist/success.html"), name="waitinglist_success"),
     url(r"^cohorts/$", "waitinglist.views.cohort_list", name="waitinglist_cohort_list"),
     url(r"^cohorts/create/$", "waitinglist.views.cohort_create", name="waitinglist_cohort_create"),
     url(r"^cohorts/cohort/(\d+)/$", "waitinglist.views.cohort_detail", name="waitinglist_cohort_detail"),
